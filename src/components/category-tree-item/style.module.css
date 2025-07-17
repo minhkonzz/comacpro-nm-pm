@@ -1,9 +1,17 @@
 .dropdownItemContent {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1em;
   margin: 1em 0;
-  position: relative;
+  transition: .3s;
+  padding-left: .25em;
+  height: 2.5rem;
+  border-radius: 5px;
+}
+
+.dropdownItemContent:hover {
+  background-color: #ffefd5;
 }
 
 .dropdownItemContent[aria-expanded=true] .plusIc {
@@ -16,11 +24,11 @@
 
 .dropdownItemContent.child::before {
   position: absolute;
-  left: -1.15em;
-  top: -1.1em;
+  left: -.9em;
+  top: -1em;
   content: "";
   width: 18px;
-  height: 35px;
+  height: 36px;
   border-bottom-left-radius: .5em;
   border-left: 1px solid #e1dedd;
   border-bottom: 1px solid #e1dedd;

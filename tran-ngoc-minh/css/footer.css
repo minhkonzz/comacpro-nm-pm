@@ -1,0 +1,173 @@
+
+        .footer-custom {
+            background-color: #F5C842;
+            color: #333;
+            padding: 40px 0 0 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* ép các div con sát top & left */
+    justify-content: flex-start; /* đảm bảo nằm trái */
+    gap: 40px;
+}
+
+        
+        /* Logo section */
+        .logo-container {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            margin-left: 56px; /* lệch trái 56px */
+        }
+        
+        .logo-container img {
+            width: 238px;
+            height: 27px;
+            margin-bottom: 16px;
+            object-fit: contain;
+        }
+        
+        .logo-container p {
+            font-size: 16px;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        /* Columns container */
+        .footer-columns {
+            flex: 1;
+            display: flex;
+            gap: 20px; /* chỉnh khoảng cách giữa các cột */
+            flex-wrap: wrap;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .footer-column h5 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .footer-column a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        
+        .footer-column a:hover {
+            color: #666;
+        }
+        
+        .footer-column .social-icons a {
+            color: #333;
+            font-size: 20px;
+            margin-right: 15px;
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        
+        .footer-column .social-icons a:hover {
+            color: #666;
+        }
+        
+        .footer-column .contact-info {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .footer-column .contact-info strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Copyright section */
+        .copyright-section {
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .copyright-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #4C4A48;
+            margin: 0;
+            text-align: center;
+        }
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .logo-container {
+                position: static;
+                width: 100%;
+                height: auto;
+                margin-bottom: 30px;
+            }
+            
+          
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-custom {
+                padding: 30px 0 0 0;
+            }
+            
+            .footer-content {
+                /* flex-direction: column; */
+                gap: 30px;
+            }
+            
+            .footer-columns {
+                flex-direction: column;
+                gap: 20px;
+                
+            }
+            
+            .footer-column {
+                width: 100%;
+                min-width: auto;
+            }
+            
+            .footer-logo-section {
+                text-align: center;
+                min-width: auto;
+                max-width: none;
+            }
+            
+            .footer-column .social-icons {
+                text-align: center;
+            }
+            
+            .copyright-text {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-custom {
+                padding: 20px 0 0 0;
+            }
+             .logo-container {
+                text-align: center;
+            }
+            
+            
+            .copyright-text {
+                font-size: 12px;
+            }
+        }

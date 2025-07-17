@@ -1,23 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 #root {
+  margin: 0 auto;
+  box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  padding: 0 2rem;
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  width: 93%;
+  padding: 2rem 0;
 }
 
 ul {
   list-style: none;
 }
 
-a {
+#root a {
   text-decoration: none;
   color: initial;
 }

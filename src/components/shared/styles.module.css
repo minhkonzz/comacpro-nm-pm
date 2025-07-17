@@ -1,5 +1,5 @@
 .input {
-  height: 59px;
+  height: 59px !important;
   border: 1px solid #bcb6b2;
   border-radius: 0.625em;
   color: #95908d;

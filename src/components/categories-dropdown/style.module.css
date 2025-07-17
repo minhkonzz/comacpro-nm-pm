@@ -17,6 +17,7 @@
 .dropdownContent {
   max-height: 430px;
   position: absolute;
+  z-index: 2;
   inset: 4rem 0px auto 0px;
   max-height: 400px;
   overflow-y: scroll;
@@ -27,9 +28,17 @@
 }
 
 .dropdownItemContent {
+  display: inline-block;
+  width: 100%;
   font-size: 0.875em;
   font-weight: 500;
-  margin: .5em 0;
+  transition: .3s;
+  padding: .5rem 0 .5rem .25em;
+  border-radius: 5px;
+}
+
+.dropdownItemContent:hover {
+  background-color: #ffefd5;
 }
 
 .searchIcon, 
