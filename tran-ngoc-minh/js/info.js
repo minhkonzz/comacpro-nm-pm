@@ -1,7 +1,6 @@
 
         let selectedFiles = [];
 
-    
 
         function openFileSelector() {
             document.getElementById('fileInput').click();
