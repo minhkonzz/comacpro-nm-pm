@@ -1,0 +1,51 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdownBtn {
+  height: 59px;
+  border: 1px solid #bcb6b2;
+  border-radius: 0.625em;
+  color: #95908d;
+  position: relative;
+  width: 100%;
+  background: none;
+  text-align: left;
+  padding-left: 3.5em;
+}
+
+.dropdownContent {
+  max-height: 430px;
+  position: absolute;
+  inset: 4rem 0px auto 0px;
+  max-height: 400px;
+  overflow-y: scroll;
+  padding: 1em 2em;
+  background-color: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 16px rgba(0,0,0,.1);
+}
+
+.dropdownItemContent {
+  font-size: 0.875em;
+  font-weight: 500;
+  margin: .5em 0;
+}
+
+.searchIcon, 
+.chrevronDown {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2c2a29;
+}
+
+.searchIcon {
+  left: 1em;
+  font-size: 1.125em;
+}
+
+.chrevronDown {
+  right: 1em;
+  font-size: .9em;
+}

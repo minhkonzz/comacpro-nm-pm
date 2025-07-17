@@ -1,0 +1,42 @@
+.dropdownItemContent {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 1em 0;
+  position: relative;
+}
+
+.dropdownItemContent[aria-expanded=true] .plusIc {
+  display: none;
+}
+
+.dropdownItemContent[aria-expanded=false] .minusIc {
+  display: none;
+}
+
+.dropdownItemContent.child::before {
+  position: absolute;
+  left: -1.15em;
+  top: -1.1em;
+  content: "";
+  width: 18px;
+  height: 35px;
+  border-bottom-left-radius: .5em;
+  border-left: 1px solid #e1dedd;
+  border-bottom: 1px solid #e1dedd;
+}
+
+.dropdownItemIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-image: url("/frame68-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 0.5px solid #e1dedd;
+}
+
+.dropdownItemText {
+  font-size: 0.875em;
+  font-weight: 500;
+}

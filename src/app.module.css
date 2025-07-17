@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 16px rgba(0,0,0,.1);
+  width: 100%;
+  max-width: 80%;
+  height: max-content;
+  padding: 2em;
+  margin-top: 8rem;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.title {
+  font-size: 1.75em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.decor {
+  display: inline-block;
+  height: 45px;
+  width: 10px;
+  border-radius: 100vw;
+  background-color: #ffa21a;
+}

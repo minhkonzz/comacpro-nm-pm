@@ -1,0 +1,54 @@
+[
+  {
+    "id": "collapse1",
+    "name": "Aerial Working Platform 1",
+    "childData": [
+      {
+        "id": "collapse1-1",
+        "name": "Aerial Working Platform 1.1",
+        "childData": [
+          {
+            "id": "collapse1-1-1",
+            "name": "Aerial Working Platform 1.1.1"
+          },
+          {
+            "id": "collapse1-1-2",
+            "name": "Aerial Working Platform 1.1.2"
+          }
+        ]
+      },
+      {
+        "id": "collapse1-2",
+        "name": "Aerial Working Platform 1.2",
+        "childData": [
+          {
+            "id": "collapse1-2-1",
+            "name": "Aerial Working Platform 1.2.1"
+          },
+          {
+            "id": "collapse1-2-2",
+            "name": "Aerial Working Platform 1.2.2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "collapse2",
+    "name": "Aerial Working Platform 2",
+    "childData": [
+      {
+        "id": "collapse2-1",
+        "name": "Aerial Working Platform 2.1"
+      },
+      {
+        "id": "collapse2-2",
+        "name": "Aerial Working Platform 2.2"
+      }
+    ]
+  },
+  {
+    "id": "collapse3",
+    "name": "Aerial Working Platform 3"
+  }
+]
