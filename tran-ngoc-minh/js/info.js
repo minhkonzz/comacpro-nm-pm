@@ -1,23 +1,6 @@
 
         let selectedFiles = [];
 
-        // Add sample images on page load
-        window.onload = function() {
-            addSampleImages();
-        };
-
-        function addSampleImages() {
-            const sampleImages = [
-                'https://via.placeholder.com/100x100/4A90E2/ffffff?text=IMG1',
-                'https://via.placeholder.com/100x100/F5A623/ffffff?text=IMG2',
-                'https://via.placeholder.com/100x100/7ED321/ffffff?text=IMG3',
-                'https://via.placeholder.com/100x100/D0021B/ffffff?text=IMG4'
-            ];
-
-            sampleImages.forEach((src, index) => {
-                createImagePreview(src, index, 'image');
-            });
-        }
 
         function openFileSelector() {
             document.getElementById('fileInput').click();
