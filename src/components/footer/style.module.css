@@ -1,0 +1,167 @@
+.footerCustom {
+  background-color: #FFC900;
+  color: #333;
+  padding: 40px 0 0 0;
+  font-family: Arial, sans-serif;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* ép các div con sát top & left */
+  justify-content: flex-start; /* đảm bảo nằm trái */
+  gap: 40px;
+}
+
+/* Logo section */
+.logoContainer {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  margin-left: 56px; /* lệch trái 56px */
+}
+
+.logoContainer img {
+  width: 238px;
+  height: 27px;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+
+.logoContainer p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Columns container */
+.footerColumns {
+  flex: 1;
+  display: flex;
+  gap: 20px; /* chỉnh khoảng cách giữa các cột */
+  flex-wrap: wrap;
+}
+
+.footerColumn {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footerColumn h5 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.footerColumn a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+  font-size: 16px;
+}
+
+.footerColumn a:hover {
+  color: #666;
+}
+
+.footerColumn .socialIcons a {
+  color: #333;
+  font-size: 20px;
+  margin-right: 15px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.footerColumn .socialIcons a:hover {
+  color: #666;
+}
+
+.footerColumn .contactInfo {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footerColumn .contactInfo strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Copyright section */
+.copyrightSection {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.copyrightText {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #4c4a48;
+  margin: 0;
+  text-align: center;
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .logoContainer {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footerCustom {
+    padding: 30px 0 0 0;
+  }
+
+  .footerContent {
+    /* flex-direction: column; */
+    gap: 30px;
+  }
+
+  .footerColumns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footerColumn {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .footerLogoSection {
+    text-align: center;
+    min-width: auto;
+    max-width: none;
+  }
+
+  .footerColumn .socialIcons {
+    text-align: center;
+  }
+
+  .copyrightText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerCustom {
+    padding: 20px 0 0 0;
+  }
+  .logoContainer {
+    text-align: center;
+  }
+
+  .copyrightText {
+    font-size: 12px;
+  }
+}

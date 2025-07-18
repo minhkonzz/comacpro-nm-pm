@@ -1,0 +1,6 @@
+[
+  { "id": "VND", "name": "VND" },
+  { "id": "USD", "name": "USD" },
+  { "id": "EUR", "name": "EUR" },
+  { "id": "GBP", "name": "GBP" }
+]

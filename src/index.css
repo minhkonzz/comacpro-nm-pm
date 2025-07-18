@@ -1,22 +1,31 @@
-#root {
-  margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  width: 93%;
-  padding: 2rem 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
   list-style: none;
 }
 
-#root a {
+a {
   text-decoration: none;
   color: initial;
 }
 
+select option[disabled]:first-child {
+  display: none;
+}
+
 ::-webkit-scrollbar {
-  width: .65em;
+  width: 0.65em;
 }
 
 ::-webkit-scrollbar-track {
@@ -28,4 +37,109 @@ ul {
 ::-webkit-scrollbar-thumb {
   background-color: #ffc900;
   border-radius: 100vw;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: #95908d;
+}
+
+/* Reuses */
+.btn-product {
+  min-width: 179px;
+  height: 45px;
+  background: #ffa21a;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-product:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 162, 26, 0.3);
+  color: #000;
+}
+
+.btn-product .icon,
+.btn-user .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-product .icon img,
+.btn-user .icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.btn-user {
+  width: 45px;
+  height: 45px;
+  background: #ffa21a;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-user:hover {
+  background-color: #e8931a;
+}
+
+/* Nút X bên trong */
+.remove-btn {
+  width: 100%;
+  height: 100%;
+  background: #ffa21a;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  /* hình tròn */
+  font-size: 18px;
+  /* tăng kích thước chữ */
+  font-weight: 500;
+  /* làm đậm hơn */
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #ff9900;
+}
+
+/* Wrapper nền đen mờ */
+.remove-wrapper {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 36px;
+  height: 36px;
+  background-color: #3d3d3dcc;
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
