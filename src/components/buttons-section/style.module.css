@@ -1,0 +1,102 @@
+/* CSS từ button.css */
+.btnUser {
+  font-weight: 600; /* ✅ thêm dòng này */
+  font-size: 16px; /* tùy chỉnh nếu muốn rõ hơn */
+}
+
+/* CSS cho nút thoát */
+.btnExit {
+  max-width: 200px;
+  height: 45px;
+  background: #e1dedd;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.btnExit:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+/* Container cho các nút */
+.buttonsSection {
+  background-color: #ffffff;
+  padding: 30px 0;
+}
+
+.buttonsContainer {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 95vw; /* ✅ Dùng theo viewport width để tương thích mọi kích thước */
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-wrap: nowrap; /* ✅ KHÔNG cho xuống dòng */
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttonLeft {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  /* Đẩy sang trái */
+}
+
+.buttonRight {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  /* Đẩy sang phải */
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+  .buttonsWrapper {
+    flex-direction: row; /* ✅ Duy trì hàng ngang */
+    gap: 10px;
+    align-items: center;
+  }
+
+  .buttonLeft,
+  .buttonRight {
+    flex: 1 1 50%; /* ✅ mỗi bên 50% chiều rộng */
+    justify-content: center;
+  }
+
+  .btnExit,
+  .btnUser {
+    width: 100%; /* ✅ full width của mỗi khối 50% */
+    height: auto;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .btnExit {
+    min-width: 150px;
+  }
+
+  .btnUser {
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .btnExit {
+    min-width: 150px;
+  }
+}

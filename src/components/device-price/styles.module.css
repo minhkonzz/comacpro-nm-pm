@@ -1,0 +1,75 @@
+.formWrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 1.5rem 0;
+}
+
+.sharedFormContainer {
+  width: 95%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sharedFormRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sharedInputGroup {
+  flex: 1 1 300px;
+}
+
+.formLabel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.formControl {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 11px 16px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.formControl:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+  outline: none;
+}
+
+.formControl:hover {
+  border-color: #bbb;
+}
+
+.currencySelect {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .sharedFormTitle {
+    font-size: 20px;
+  }
+
+  .formControl {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sharedFormContainer {
+    padding: 20px;
+  }
+}

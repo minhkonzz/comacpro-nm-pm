@@ -1,0 +1,5 @@
+[
+  { "id": "new", "name": "Mới" },
+  { "id": "on-used", "name": "Đã sử dụng" },
+  { "id": "need-fix", "name": "Cần sửa chữa" }
+]

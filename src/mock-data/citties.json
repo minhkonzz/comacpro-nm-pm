@@ -1,0 +1,7 @@
+[
+  { "id": "hanoi", "name": "Hà Nội" },
+  { "id": "hcm", "name": "Thành phố Hồ Chí Minh" },
+  { "id": "danang", "name": "Đà Nẵng" },
+  { "id": "haiphong", "name": "Hải Phòng" },
+  { "id": "cantho", "name": "Cần Thơ" }
+]
