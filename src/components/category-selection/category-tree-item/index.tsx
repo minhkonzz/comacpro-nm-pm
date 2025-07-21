@@ -1,11 +1,14 @@
 import { useCategorySelection } from "@/contexts/category-selection";
 import styles from "./style.module.css";
 
-interface Props {
-  id: string;
-  name: string;
+export type Category = {
+  id: string,
+  name: string,
+  childData?: Category[]
+}
+
+type Props = Category & {
   child?: boolean;
-  childData: any;
 }
 
 function ItemWithoutChildData({ name, child }: Pick<Props, "name" | "child">) {
@@ -45,7 +48,7 @@ function ItemHasChildData({ id, name, child, childData }: Props) {
         <i className={`${styles.minusIc} bi bi-dash-lg`}></i>
       </a>
       <ul className={`collapse ${styles.dropdownItemChild}`} id={id}>
-        {childData.map((item: any) => (
+        {childData?.map((item: Category) => (
           <CategoryTreeItem key={item.id} {...item} child />
         ))}
       </ul>

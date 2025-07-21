@@ -1,6 +1,6 @@
 import { useCategorySelection } from "@/contexts/category-selection";
 import useClickOutside from "@/hooks/use-click-outside";
-import CategoryTreeItem from "../category-tree-item";
+import CategoryTreeItem, { type Category } from "../category-tree-item";
 import styles from "./style.module.css";
 import categories from "@/mock-data/categories.json";
 
@@ -8,16 +8,19 @@ export default function CategoryDropdown() {
   const {
     selectedCategory,
     setSelectedCategory,
-    showDropdown,
     toggleDropdown,
+    showDropdown,
     setShowDropdown
   } = useCategorySelection();
 
-  const ref = useClickOutside<HTMLUListElement>(() => setShowDropdown(false));
+  const addRef = useClickOutside(() =>
+    setShowDropdown(false)
+  );
 
   return (
     <div className={styles.dropdown}>
       <button
+        ref={addRef}
         onClick={toggleDropdown}
         className={styles.dropdownBtn}>
         <i className={`${styles.searchIcon} bi bi-search`}></i>
@@ -26,9 +29,10 @@ export default function CategoryDropdown() {
           : selectedCategory || "Sản phẩm khác"}
         <i className={`${styles.chrevronDown} bi bi-chevron-down`}></i>
       </button>
+
       {showDropdown && (
-        <ul ref={ref} className={styles.dropdownContent}>
-          {categories.map((item: any) => (
+        <ul ref={addRef} className={styles.dropdownContent}>
+          {categories.map((item: Category) => (
             <CategoryTreeItem key={item.id} {...item} />
           ))}
           <li>

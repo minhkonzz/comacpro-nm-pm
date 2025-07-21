@@ -9,23 +9,27 @@ import {
 
 import { useToggle } from "@/hooks";
 
-type CategorySelectionContextType = {
+interface CategorySelectionContextType {
   selectedCategory: string | undefined;
   setSelectedCategory: Dispatch<SetStateAction<string | undefined>>;
   showDropdown: boolean;
-  toggleDropdown: () => void,
+  toggleDropdown: () => void;
   setShowDropdown: Dispatch<SetStateAction<boolean>>;
-};
+}
 
-const CategorySelectionContext =
-  createContext<CategorySelectionContextType | null>(null);
+const CategorySelectionContext = createContext<CategorySelectionContextType | null>(null);
 
 export default function CategorySelectionProvider({
   children
 }: {
   children: ReactNode;
 }) {
-  const [showDropdown, toggleDropdown, setShowDropdown] = useToggle(false);
+  const {
+    active: showDropdown,
+    toggle: toggleDropdown,
+    setActive: setShowDropdown
+  } = useToggle(false);
+  
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
     undefined
   );

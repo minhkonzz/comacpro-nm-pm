@@ -4,6 +4,7 @@ import deviceModels from "@/mock-data/device-models.json";
 
 export default function CategoryInputs() {
   const { selectedCategory } = useCategorySelection();
+
   return (
     (selectedCategory == "" && (
       <>

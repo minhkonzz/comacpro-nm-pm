@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import type { ChangeEvent } from "react";
+import { useState, useRef, type ReactChangeEvent } from "@/utils/imports";
 import { TextInput, SelectInput } from "@/components/shared";
 import deviceStates from "@/mock-data/device-states.json";
 import styles from "./style.module.css";
@@ -43,7 +42,7 @@ export default function FormFields() {
     defectInfo: ""
   });
 
-  const handleCatalogUpload = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleCatalogUpload = (event: ReactChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file && file.type === "application/pdf") {
       setCatalogFile({
@@ -69,7 +68,7 @@ export default function FormFields() {
     }));
   };
 
-  const handleDefectsToggle = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleDefectsToggle = (event: ReactChangeEvent<HTMLInputElement>) => {
     setHasDefects(event.target.checked);
     if (!event.target.checked) {
       handleInputChange('defectInfo', '');
