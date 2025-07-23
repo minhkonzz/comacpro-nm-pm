@@ -2,28 +2,29 @@ import { useCategorySelection } from "@/contexts/category-selection";
 import styles from "./style.module.css";
 
 export type Category = {
-  id: string,
-  name: string,
-  childData?: Category[]
-}
+  id: string;
+  name: string;
+  childData?: Category[];
+};
 
 type Props = Category & {
   child?: boolean;
-}
+};
 
 function ItemWithoutChildData({ name, child }: Pick<Props, "name" | "child">) {
-  const { setSelectedCategory, setShowDropdown } = useCategorySelection();
+  const { selectedCategory, setSelectedCategory, setShowDropdown } =
+    useCategorySelection();
 
   return (
     <a
       role="button"
       onClick={() => {
-        setSelectedCategory(name)
+        setSelectedCategory(name);
         setShowDropdown(false);
       }}
       className={`${styles.dropdownItemContent}${
         child ? " " + styles.child : ""
-      }`}>
+      }${selectedCategory == name ? " " + styles.selected : ""}`}>
       <span className={styles.dropdownItemIcon} />
       <span className={styles.dropdownItemText}>{name}</span>
     </a>

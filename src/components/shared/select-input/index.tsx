@@ -1,4 +1,4 @@
-import type { ReactChangeEvent } from "@/utils/imports";
+import { type ReactChangeEvent, useState } from "@/utils/imports";
 import styles from "../styles.module.css";
 
 interface Props {
@@ -16,12 +16,15 @@ export default function SelectInput({
   id,
   label,
   options,
-  defaultValue,
+  defaultValue = "",
   placeholder,
   onChange,
   wrapperClassName = "",
   selectClassName = ""
 }: Props) {
+  const [selectedValue, setSelectedValue] = useState(defaultValue);
+  console.log(selectedValue)
+
   return (
     <div className={wrapperClassName}>
       <label htmlFor={id} className={`${styles.inputTitle} form-label`}>
@@ -34,14 +37,20 @@ export default function SelectInput({
           selectClassName ? ` ${selectClassName}` : ""
         }`}
         aria-label={label}
-        onChange={onChange}>
+        onChange={(e: ReactChangeEvent<HTMLSelectElement>) => {
+          setSelectedValue(e.target.value);
+          onChange?.(e);
+        }}>
         {placeholder && (
           <option value="" disabled selected>
             {placeholder}
           </option>
         )}
         {options.map(opt => (
-          <option key={opt.id} value={opt.id}>
+          <option
+            key={opt.id}
+            value={opt.id}
+            {...(selectedValue == opt.id && { className: "selected" })}>
             {opt.name}
           </option>
         ))}

@@ -12,6 +12,10 @@
   background-color: #ffefd5;
 }
 
+.dropdownItemContent.selected {
+  background-color: #f1f1f1;
+}
+
 .dropdownItemContent[aria-expanded=true] .plusIc {
   display: none;
 }

@@ -24,6 +24,10 @@ select option[disabled]:first-child {
   display: none;
 }
 
+select option.selected {
+  background-color: #f1f1f1;
+}
+
 ::-webkit-scrollbar {
   width: 0.65em;
 }
