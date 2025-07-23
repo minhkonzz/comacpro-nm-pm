@@ -6,6 +6,7 @@ import {
   type SetStateAction
 } from "@/utils/imports";
 import styles from "./style.module.css";
+import { ButtonWithLoading } from "@/components/shared/loading";
 
 function MediaElement({
   fileIndex,
@@ -25,7 +26,7 @@ function MediaElement({
   return (
     <div className={styles.imageItem} id={`image-${fileIndex}`}>
       {fileType === "image" ? (
-        <img src={src} alt={`Preview ${fileIndex + 1}`} />
+        <img src={src} alt={`Preview ${fileIndex + 1}`} className="cursor-pointer" />
       ) : (
         <video src={src} controls></video>
       )}
@@ -41,6 +42,7 @@ function MediaElement({
 export default function UploadSection() {
   const uploadBtnRef = useRef<HTMLInputElement>(null);
   const [selectedFiles, setSelectedFiles] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const handleFileSelect = (event: ReactChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files!);
@@ -61,6 +63,15 @@ export default function UploadSection() {
         reader.readAsDataURL(file);
       }
     });
+    setLoading(false); // Tắt loading sau khi chọn xong
+  };
+
+  const handleUploadClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      if (uploadBtnRef.current) uploadBtnRef.current.click();
+    }, 1500); // Giả lập loading 1.5s
   };
 
   return (
@@ -69,14 +80,14 @@ export default function UploadSection() {
         <p className={styles.uploadText}>
           Kéo thả hoặc chọn ảnh, videos từ thư viện của bạn
         </p>
-        <button
+        <ButtonWithLoading
           type="button"
           className={`btn-product ${styles.btnProduct}`}
-          onClick={() => {
-            uploadBtnRef.current!.click();
-          }}>
+          loading={loading}
+          onClick={handleUploadClick}
+        >
           Chọn ảnh và video
-        </button>
+        </ButtonWithLoading>
         <input
           ref={uploadBtnRef}
           type="file"

@@ -3,6 +3,7 @@ import type { ChangeEvent } from "react";
 import { TextInput, SelectInput } from "@/components/shared";
 import deviceStates from "@/mock-data/device-states.json";
 import styles from "./style.module.css";
+import { ButtonWithLoading } from "@/components/shared/loading";
 
 interface CatalogFile {
   name: string;
@@ -42,6 +43,7 @@ export default function FormFields() {
     platformHeight: "23.77",
     defectInfo: ""
   });
+  const [catalogLoading, setCatalogLoading] = useState(false);
 
   const handleCatalogUpload = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -208,19 +210,29 @@ export default function FormFields() {
       <div className={`${styles.catalogSection} ${catalogFile ? styles.catalogSectionNoSpace : ''}`}>
         <label className={`form-label ${styles.formLabel}`}>Catalogue</label>
         {!catalogFile ? (
-          <button
+          <ButtonWithLoading
             type="button"
             className={`btn-product ${styles.btnProduct}`}
-            onClick={() => catalogInputRef.current?.click()}>
-            <div className="icon">
-              <img src="/archive-book.png" alt="Catalog" />
-            </div>
-            Tải lên catalogue
-          </button>
+            loading={catalogLoading}
+            onClick={() => {
+              setCatalogLoading(true);
+              setTimeout(() => {
+                setCatalogLoading(false);
+                catalogInputRef.current?.click();
+              }, 1500);
+            }}
+          >
+            <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span className="icon">
+                <img src="/archive-book.png" alt="Catalog" />
+              </span>
+              <span>Tải lên catalogue</span>
+            </span>
+          </ButtonWithLoading>
         ) : (
           <div className={styles.catalogFile}>
             <div className={styles.fileInfo}>
-              <img src="public/task-square.png" alt="PDF" className={styles.pdfIcon} />
+              <img src="/task-square.png" alt="PDF" className={styles.pdfIcon} />
               <span className={styles.fileName}>{catalogFile.name}</span>
             </div>
             <button
