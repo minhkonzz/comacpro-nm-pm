@@ -3,19 +3,19 @@ import { SectionTitle, TextInput, SelectInput } from "@/components/shared";
 import postalCodes from "@/mock-data/postal-codes.json";
 import cities from "@/mock-data/citties.json";
 import styles from "./style.module.css";
+import { ButtonWithLoading } from "@/components/shared/loading";
 
 export default function DevicesLocation() {
   // const [address, setAddress] = useState("");
   const [postalCode, setPostalCode] = useState<number>(0);
+  const [mapLoading, setMapLoading] = useState(false);
 
   const onSelectMap = () => {
-    // Simulate map selection
-    alert('Chức năng chọn từ bản đồ sẽ được triển khai');
-                
-    // Example: auto-fill address after map selection
-    // if (address.trim() === '') {
-    //   setAddress("Địa chỉ được chọn từ bản đồ");
-    // }
+    setMapLoading(true);
+    setTimeout(() => {
+      setMapLoading(false);
+      alert('Chức năng chọn từ bản đồ sẽ được triển khai');
+    }, 1500);
   }
 
   const onSelectCity = (e: ReactChangeEvent<HTMLSelectElement> ) => {
@@ -60,15 +60,19 @@ export default function DevicesLocation() {
                 label="Địa chỉ cụ thể"
                 placeholder="Nhập mô tả"
               />
-              <button
+              <ButtonWithLoading
                 className={`btn-product ${styles.btnProduct}`}
                 id="mapButton"
-                onClick={onSelectMap}>
-                <span className="icon">
-                  <img src="/map.png" alt="Map icon" />
+                loading={mapLoading}
+                onClick={onSelectMap}
+              >
+                <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span className="icon">
+                    <img src="/map.png" alt="Map icon" />
+                  </span>
+                  <span>Chọn từ bản đồ</span>
                 </span>
-                Chọn từ bản đồ
-              </button>
+              </ButtonWithLoading>
             </div>
           </div>
         </div>

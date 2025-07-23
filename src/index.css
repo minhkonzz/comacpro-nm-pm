@@ -143,3 +143,10 @@ select option[disabled]:first-child {
   align-items: center;
   justify-content: center;
 }
+/* Hiển thị bàn tay khi hover vào các thẻ a, button, [role="button"], .cursor-pointer */
+a, button, [role="button"], .cursor-pointer {
+  cursor: pointer;
+}
+a img, button img, [role="button"] img, .cursor-pointer img {
+  cursor: pointer;
+}

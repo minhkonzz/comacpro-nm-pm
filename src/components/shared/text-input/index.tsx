@@ -39,6 +39,22 @@ export default function TextInput({
         placeholder={placeholder}
         onChange={onChange}
         readOnly={!!readOnly}
+        onDrop={e => {
+          if (
+            e.dataTransfer.files.length > 0 ||
+            Array.from(e.dataTransfer.items).some(item => item.kind !== 'string')
+          ) {
+            e.preventDefault();
+          }
+        }}
+        onPaste={e => {
+          if (
+            e.clipboardData.files.length > 0 ||
+            Array.from(e.clipboardData.items).some(item => item.kind !== 'string')
+          ) {
+            e.preventDefault();
+          }
+        }}
       />
     </div>
   );
